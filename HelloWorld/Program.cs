@@ -8,11 +8,14 @@ namespace HelloWorld
 {
     internal class Program
     {
-        public string PersonName;
+        //public string PersonName;
+        
         static void Main(string[] args)
         {
             string personName = "csfvfvf";
             Console.WriteLine("Hello World!");
+            
         }
     }
 }
+
