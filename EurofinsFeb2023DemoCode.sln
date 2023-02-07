@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-2", "PLT-2\PLT-2.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-3", "PLT-3\PLT-3.csproj", "{223EC1B5-0281-4407-958A-0A879D55FF0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-4", "PLT-4\PLT-4.csproj", "{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,14 @@ Global
 		{223EC1B5-0281-4407-958A-0A879D55FF0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{223EC1B5-0281-4407-958A-0A879D55FF0B}.Release|x86.ActiveCfg = Release|Any CPU
 		{223EC1B5-0281-4407-958A-0A879D55FF0B}.Release|x86.Build.0 = Release|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Debug|x86.Build.0 = Debug|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Release|x86.ActiveCfg = Release|Any CPU
+		{9B7381EF-6A5C-4AA1-B8CF-FC3E4873363D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
