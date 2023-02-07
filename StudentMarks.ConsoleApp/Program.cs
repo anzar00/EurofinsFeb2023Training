@@ -26,8 +26,10 @@ namespace StudentMarks.ConsoleApp // UI
             physics= int.Parse(Console.ReadLine());
             Console.WriteLine("Enter marks scored in Chemistry : ");
             chemistry= int.Parse(Console.ReadLine());
+
             int total;
             total = Total.TotalMarks(maths, physics, chemistry);
+
             float average;
             average = Average.AverageMarks(total);
 
