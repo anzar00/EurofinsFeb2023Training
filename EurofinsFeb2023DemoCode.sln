@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-6", "PLT-6\PLT-6.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-7", "PLT-7\PLT-7.csproj", "{E3A36633-1933-49D3-A10B-E2BF4B3B9570}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-25a", "PLT-25a\PLT-25a.csproj", "{594D707C-958D-4B82-A712-3FCD5C303C4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,14 @@ Global
 		{E3A36633-1933-49D3-A10B-E2BF4B3B9570}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3A36633-1933-49D3-A10B-E2BF4B3B9570}.Release|x86.ActiveCfg = Release|Any CPU
 		{E3A36633-1933-49D3-A10B-E2BF4B3B9570}.Release|x86.Build.0 = Release|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{594D707C-958D-4B82-A712-3FCD5C303C4D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
