@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-25a", "PLT-25a\PLT-25a.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-30", "PLT-30\PLT-30.csproj", "{E7A03C1F-51AD-48AA-8E8C-56DC95A5421B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-29", "PLT-29\PLT-29.csproj", "{839D7495-4C62-45E0-B613-85560A58A761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,14 @@ Global
 		{E7A03C1F-51AD-48AA-8E8C-56DC95A5421B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E7A03C1F-51AD-48AA-8E8C-56DC95A5421B}.Release|x86.ActiveCfg = Release|Any CPU
 		{E7A03C1F-51AD-48AA-8E8C-56DC95A5421B}.Release|x86.Build.0 = Release|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Debug|x86.Build.0 = Debug|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Release|x86.ActiveCfg = Release|Any CPU
+		{839D7495-4C62-45E0-B613-85560A58A761}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
