@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PLT_25a
+namespace PLT_25
 {
     internal class Program
     {
@@ -19,30 +19,13 @@ namespace PLT_25a
             //: 
             //: 
             //N rows
-
-
-            //Console.WriteLine("Enter N: ");
-            //int n = Convert.ToInt32(Console.ReadLine());
-
-            //int number = 1;
-            //for (int i = 1; i <= n; i++)
-            //{
-            //    for (int j = 1; j <= i; j++)
-            //    {
-            //        if (j==1 & i==1) Console.Write(number);
-            //        else
-            //            Console.Write((number * number) * (j % 2 != 0 ? -1 : 1) + " ");
-            //        number++;
-            //    }
-            //    Console.WriteLine();
-            //}
-
-            //Console.ReadLine();
-
             int i, j, n = 0;
             int a = 1;
             int sign = 1;
-
+            Console.Write("Given pattern:\n" +
+                "1\n" +
+                "-4 9\n" +
+                "-16 25 -36 \n");
             Console.WriteLine("Enter N: ");
             n = Convert.ToInt32(Console.ReadLine());
 
