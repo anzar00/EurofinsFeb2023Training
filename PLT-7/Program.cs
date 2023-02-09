@@ -67,7 +67,7 @@ namespace PLT_7
             if (taxSavingInvestments > 100000)
                 taxSavingInvestments = 100000;
 
-            int annualNetSalary = grossAnnualSalary - taxPayable - taxSavingInvestments;
+            int annualNetSalary = grossAnnualSalary - taxPayable + taxSavingInvestments;
 
             Console.WriteLine($"Annual gross salary is - {grossAnnualSalary}");
             Console.WriteLine($"Annual net salary is - {annualNetSalary}");
