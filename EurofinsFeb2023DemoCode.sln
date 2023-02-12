@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-27", "PLT-27\PLT-27.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-26", "PLT-26\PLT-26.csproj", "{7154079D-3B17-4078-8A53-AE49F82B2C78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLT-22", "PLT-22\PLT-22.csproj", "{BC98DF72-15DE-443B-A34C-287B3A3322A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +275,14 @@ Global
 		{7154079D-3B17-4078-8A53-AE49F82B2C78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7154079D-3B17-4078-8A53-AE49F82B2C78}.Release|x86.ActiveCfg = Release|Any CPU
 		{7154079D-3B17-4078-8A53-AE49F82B2C78}.Release|x86.Build.0 = Release|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC98DF72-15DE-443B-A34C-287B3A3322A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
