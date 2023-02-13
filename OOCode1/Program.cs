@@ -29,8 +29,67 @@ namespace OOCode1
             Console.WriteLine(customer.Id);
             Console.WriteLine(customer.Name);
             Console.WriteLine(customer.Age);
+
+            Address addr = new Address { Area="Brookefield" };
+
+            customer.Address = addr;
+
+            //Employee e1 = new Employee(1, "Test1",60000);
+
+            // Object Initilization Syntax
+
+
+            Employee e2 = new Employee { EmpId=1 };
+            Employee e3 = new Employee { EmpId=2, Name="Test2" };
+            Employee e4 = new Employee { EmpId=3, Name="Test 3", Salary=30000 };
+            Employee e5 = new Employee { EmpId=1, Salary=500000, Address = new Address { City="Bengaluru" } };
+            Employee e6 = new Employee { EmpId=41, Salary=500000, Address = new Address { City="Bengaluru" } };
+            Console.ReadKey();
         }
     }
+
+    class Employee
+    {
+        public int EmpId
+        {
+            get;
+            set;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        int salary;
+        public int Salary
+        {
+            get { return salary; }
+            set
+            {
+                if (value<10000)
+                    salary = 10000;
+                salary = value;
+            }
+        }
+        //public Employee(int id, string name, int salary) : this(id,name)
+        //{
+        //    Salary = salary;
+        //}
+
+        //public Employee(int id)
+        //{
+        //    EmpId = id;
+        //}
+
+        //public Employee(int id, string name): this(id)
+        //{
+        //    Name = name;
+        //}
+        public Address Address{ get; set; }
+    }
+
 
     class Customer // Author
     {
@@ -38,10 +97,17 @@ namespace OOCode1
 
         //Property with set and get block
 
+        //public int Id
+        //{
+        //    get { return id; }
+        //    set { id = value; }
+        //}
+
+        // Automatic Property
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get;
+            set;
         }
 
         //public void SetId(int id) // method
@@ -104,12 +170,22 @@ namespace OOCode1
         //    }
         //    this.age = age;
         //}
-        
+
         //public int GetAge() //method
         //{
         //    return age;
         //}
 
-        
+        public Address Address { get; set; }
+
+
+    }
+
+    class Address
+    {
+        public string Area { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Pincode { get; set; } 
     }
 }
