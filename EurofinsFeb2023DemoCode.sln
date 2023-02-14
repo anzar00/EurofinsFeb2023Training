@@ -89,6 +89,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OO Code", "OO Code", "{8484
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerTraineeApp", "TrainerTraineeApp\TrainerTraineeApp.csproj", "{BCA4D127-81C0-49C5-8906-1031DD5D2BE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyOrder", "CompanyOrder\CompanyOrder.csproj", "{716086EB-3056-4F09-A6DA-9BA6909FBA43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -385,6 +387,14 @@ Global
 		{BCA4D127-81C0-49C5-8906-1031DD5D2BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BCA4D127-81C0-49C5-8906-1031DD5D2BE9}.Release|x86.ActiveCfg = Release|Any CPU
 		{BCA4D127-81C0-49C5-8906-1031DD5D2BE9}.Release|x86.Build.0 = Release|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Debug|x86.Build.0 = Debug|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Release|x86.ActiveCfg = Release|Any CPU
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -402,6 +412,7 @@ Global
 		{2683350D-4092-43F7-A6EB-C0F9B57B3386} = {84846264-73D0-40B2-83ED-48FB73DD13A7}
 		{AB44B1C0-C78B-41B7-90D6-FA103778C3F5} = {84846264-73D0-40B2-83ED-48FB73DD13A7}
 		{BCA4D127-81C0-49C5-8906-1031DD5D2BE9} = {84846264-73D0-40B2-83ED-48FB73DD13A7}
+		{716086EB-3056-4F09-A6DA-9BA6909FBA43} = {84846264-73D0-40B2-83ED-48FB73DD13A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05959226-3BF2-46BD-9D91-7ACB1B24FBF7}
