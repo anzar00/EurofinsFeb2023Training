@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Company.Program" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.Company">
+    <Position X="1.25" Y="1.5" Width="2.25" />
+    <AssociationLine Name="Reg" Type="Company.Branch" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="2.711" />
+        <Point X="0.875" Y="2.711" />
+        <Point X="0.875" Y="5.188" />
+        <Point X="1.5" Y="5.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Corp" Type="Company.Branch" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.188" Y="3.825" />
+        <Point X="3.188" Y="5.25" />
+        <Point X="3" Y="5.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.366" Y="0.878" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Employees" Type="Company.Employee" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="2.06" />
+        <Point X="5.062" Y="2.06" />
+        <Point X="5.062" Y="4" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Customers" Type="Company.Customer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.938" Y="1.5" />
+        <Point X="2.938" Y="1.26" />
+        <Point X="7.5" Y="1.26" />
+        <Point X="7.5" Y="4" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IKEAAAAAAAAAggAAAAAAAAYBCAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Reg" />
+      <Property Name="Corp" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Branches" />
+      <Property Name="Employees" />
+      <Property Name="Customers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Company.Branch">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.Person">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.Employee">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACACAAAAAAAAAAAAAAAACAQAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.Customer">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.SalaryCalculator">
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
