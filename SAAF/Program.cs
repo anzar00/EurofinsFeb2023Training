@@ -130,6 +130,8 @@ namespace SAAF
         public List<Ward> Wards { get; set; } = new List<Ward>();
 
        //Get Total Patients count.
+       
+        
 
 
 
