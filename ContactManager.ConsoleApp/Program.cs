@@ -27,33 +27,33 @@ namespace ContactManager.ConsoleApp
 
             int choice = int.Parse(Console.ReadLine());
 
-            switch (choice)
-            {
-                case 1:
-                    contactsFileRepository.AddContact();
-                    break;
-                case 2:
-                    contactsFileRepository.EditContact();
-                    break;
-                case 3:
-                    contactsFileRepository.DeleteContact();
-                    break;
-                case 4:
-                    contactsFileRepository.GetContact();
-                    break;
-                case 5:
-                    contactsFileRepository.GetContacts();
-                    break;
-                case 6:
-                    contactsFileRepository.GetContactsByLocation();
-                    break;
-                case 7:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Invalid Choice");
-                    break;
-            }
+            //switch (choice)
+            //{
+            //    case 1:
+            //        contactsFileRepository.AddContact();
+            //        break;
+            //    case 2:
+            //        contactsFileRepository.EditContact();
+            //        break;
+            //    case 3:
+            //        contactsFileRepository.DeleteContact();
+            //        break;
+            //    case 4:
+            //        contactsFileRepository.GetContact();
+            //        break;
+            //    case 5:
+            //        contactsFileRepository.GetContacts();
+            //        break;
+            //    case 6:
+            //        contactsFileRepository.GetContactsByLocation();
+            //        break;
+            //    case 7:
+            //        Environment.Exit(0);
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid Choice");
+            //        break;
+            //}
         }
     }
 }
