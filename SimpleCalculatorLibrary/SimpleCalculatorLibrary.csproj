@@ -46,5 +46,11 @@
     <Compile Include="OddInputException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleCalculator.DataAccess\SimpleCalculator.DataAccess.csproj">
+      <Project>{064ccbef-accc-49b8-8329-1fb1651827aa}</Project>
+      <Name>SimpleCalculator.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
