@@ -88,17 +88,19 @@ namespace ContactManager.DataAccess
         public Contact GetContact(Contact contact)
         {
             //get contact details
-            
+            return new Contact();
         }
 
         public List<Contact> GetContacts()
         {
             // get all contacts in the file 
+            return new List<Contact>();
         }
 
         public List<Contact> GetContactsByLocation(string location)
         {
             // get all contacts in the file based on location
+            return new List<Contact>();
         }
     }
 }
