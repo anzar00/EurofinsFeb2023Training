@@ -17,9 +17,13 @@ namespace DelegatesDemo3
             //notifyDelegate += Notification.SendSMS;
             
             Account acc1 = new Account();
+            //acc1.notify += Notification.SendSMS;
+            //acc1.Subscribe(Notification.SendSMS);
             acc1.notify += Notification.SendSMS;
-            acc1.notify += Notification.SendEmail;
+            //acc1.notify += Notification.SendEmail;
+            //acc1.Subscribe(Notification.SendEmail);
             //acc1.Deposit(5000, notifyDelegate);
+            acc1.notify += Notification.SendEmail;
             acc1.Deposit(5000);
             Console.WriteLine($"Account Balance - {acc1.Balance}");
             //acc1.Withdraw(1000, notifyDelegate);
@@ -35,7 +39,18 @@ namespace DelegatesDemo3
     public class Account
     {
         public int Balance { get; private set; }
-        public NotifyDelegate notify { get; set; }
+        //private NotifyDelegate notify { get; set; }
+        public event NotifyDelegate notify;
+
+        //public void Subscribe(NotifyDelegate alert)
+        //{
+        //    notify += alert;
+        //}
+
+        //public void Unsubscribe(NotifyDelegate alert)
+        //{
+        //    notify -= alert;
+        //}
 
         //        public void Deposit(int amount, NotifyDelegate notifyDelegate)
         public void Deposit(int amount)
