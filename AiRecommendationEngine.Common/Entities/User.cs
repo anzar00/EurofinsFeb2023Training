@@ -16,6 +16,6 @@ namespace AiRecommendationEngine.Common.Entities
         public string Country { get; set; }
 
         //User has 0 or many BookUserRating
-        public List<BookUserRating> UserRatings { get; set; }
+        public List<BookUserRating> UserRatings { get; set; } = new List<BookUserRating>();
     }
 }

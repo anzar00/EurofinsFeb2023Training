@@ -21,7 +21,7 @@ namespace AiRecommendationEngine.Common.Entities
         public string ImageURLLarge { get; set; }
 
         //Book has 0 or many BookUserRating
-        public List<BookUserRating> BookRatings { get; set; }
+        public List<BookUserRating> BookRatings { get; set; } = new List<BookUserRating>();
 
     }
 }

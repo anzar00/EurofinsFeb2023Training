@@ -11,25 +11,37 @@ namespace AiRecommendationEngine.RatingsAggregator
     {
         public Dictionary<string, List<int>> Aggregate(BookDetails bookDetails, Preference preference)
         {
-            ////Collect all ratings for each book based on preference and return 
-            //Dictionary<string, List<int>> ratings = new Dictionary<string, List<int>>();
-
-            //// fill the ratings
-
-            //return ratings;
-
+            //Store all BookUserRatings in a dictionary with key as ISBN and value as list of ratings 
+            //for that ISBN where the user is from the same state and age group as the preference
             Dictionary<string, List<int>> ratings = new Dictionary<string, List<int>>();
-            foreach (var item in bookDetails)
+            AgeGroup ageGroup = new AgeGroup();
+
+            foreach(Book book in bookDetails.Books)
             {
-                if (item.book.State == preference.State && item.book.Age == preference.Age)
+                foreach(BookUserRating bookUserRating in bookDetails.BookUserRatings)
                 {
-                    if (ratings.ContainsKey(item.ISBN))
+                    if(bookUserRating.ISBN == book.ISBN)
                     {
-                        ratings[item.ISBN].Add(item.Rating);
-                    }
-                    else
-                    {
-                        ratings.Add(item.ISBN, new List<int>() { item.Rating });
+                        foreach(User user in bookDetails.Users)
+                        {
+                            if(user.UserID == bookUserRating.UserID)
+                            {
+                                if(user.State == preference.State)
+                                {
+                                    if(ageGroup.GetAgeGroup(user.Age) == ageGroup.GetAgeGroup(preference.Age))
+                                    {
+                                        if(ratings.ContainsKey(book.ISBN))
+                                        {
+                                            ratings[book.ISBN].Add(bookUserRating.Rating);
+                                        }
+                                        else
+                                        {
+                                            ratings.Add(book.ISBN, new List<int>() { bookUserRating.Rating });
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
