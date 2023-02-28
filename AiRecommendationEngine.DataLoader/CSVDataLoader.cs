@@ -10,9 +10,9 @@ namespace AiRecommendationEngine.DataLoader
 {
     public class CSVDataLoader : IDataLoader
     {
-        private string BookRatingsFilePath = @"../../BX-Book-Rating.csv";
-        private string BooksFilePath = @"../../BX-Books.csv";
-        private string UsersFilePath = @"../../BX-Users.csv";
+        private string BookRatingsFilePath = @"C:\Users\Admin\source\repos\EurofinsFeb2023DemoCode\AiRecommendationEngine.DataLoader\BX-Book-Ratings.csv";
+        private string BooksFilePath = @"C:\Users\Admin\source\repos\EurofinsFeb2023DemoCode\AiRecommendationEngine.DataLoader\BX-Books.csv";
+        private string UsersFilePath = @"C:\Users\Admin\source\repos\EurofinsFeb2023DemoCode\AiRecommendationEngine.DataLoader\BX-Users.csv";
         public BookDetails LoadData()
         {
             var books = new List<Book>();

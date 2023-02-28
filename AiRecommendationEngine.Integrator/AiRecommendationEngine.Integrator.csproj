@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43725369-CA18-49ED-A0FC-86B9B3B639A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AiRecommendationEngine.Integrator</RootNamespace>
+    <AssemblyName>AiRecommendationEngine.Integrator</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIRecommendationEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AiRecommendationEngine.Common\AiRecommendationEngine.Common.csproj">
+      <Project>{E4714F0A-5BED-44EA-B185-89B2C0684779}</Project>
+      <Name>AiRecommendationEngine.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AiRecommendationEngine.CoreRecommender\AiRecommendationEngine.CoreRecommender.csproj">
+      <Project>{7F690A15-306C-4E58-ADE7-E24106EEDF97}</Project>
+      <Name>AiRecommendationEngine.CoreRecommender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AiRecommendationEngine.DataLoader\AiRecommendationEngine.DataLoader.csproj">
+      <Project>{0319EF43-041A-45E2-ACA4-627DA03C9F93}</Project>
+      <Name>AiRecommendationEngine.DataLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AiRecommendationEngine.RatingsAggregator\AiRecommendationEngine.RatingsAggregator.csproj">
+      <Project>{661028D4-B6DB-4BCC-878C-B8B4F5C8C2D7}</Project>
+      <Name>AiRecommendationEngine.RatingsAggregator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -20,25 +20,19 @@ namespace AiRecommendationEngine.RatingsAggregator
             {
                 foreach(BookUserRating bookUserRating in bookDetails.BookUserRatings)
                 {
-                    if(bookUserRating.ISBN == book.ISBN)
+                    if (ageGroup.GetAgeGroup(bookUserRating.user.Age) == ageGroup.GetAgeGroup(preference.Age) && bookUserRating.user.State == (preference.State))
                     {
                         foreach(User user in bookDetails.Users)
                         {
                             if(user.UserID == bookUserRating.UserID)
                             {
-                                if(user.State == preference.State)
+                                if(ratings.ContainsKey(book.ISBN))
                                 {
-                                    if(ageGroup.GetAgeGroup(user.Age) == ageGroup.GetAgeGroup(preference.Age))
-                                    {
-                                        if(ratings.ContainsKey(book.ISBN))
-                                        {
-                                            ratings[book.ISBN].Add(bookUserRating.Rating);
-                                        }
-                                        else
-                                        {
-                                            ratings.Add(book.ISBN, new List<int>() { bookUserRating.Rating });
-                                        }
-                                    }
+                                    ratings[book.ISBN].Add(bookUserRating.Rating);
+                                }
+                                else
+                                {
+                                    ratings.Add(book.ISBN, new List<int>() { bookUserRating.Rating });
                                 }
                             }
                         }
