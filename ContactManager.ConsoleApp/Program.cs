@@ -1,4 +1,5 @@
 ﻿using ContactManager.DataAccess;
+using ContactManager.DataAccess.EFDataAccess;
 using ContactManager.DataAccess.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,71 +19,92 @@ namespace ContactManager.ConsoleApp
 
             //Console.WriteLine("Contact Manager Application");
 
-            //Console.WriteLine("1. Add Contact");
-            //Console.WriteLine("2. Edit Contact");
-            //Console.WriteLine("3. Delete Contact");
-            //Console.WriteLine("4. Get Contact Details");
-            //Console.WriteLine("5. Get All Contacts");
-            //Console.WriteLine("6. Get Contacts By Location");
-            //Console.WriteLine("7. Exit");
+            Console.WriteLine("1. Add Contact");
+            Console.WriteLine("2. Edit Contact");
+            Console.WriteLine("3. Delete Contact");
+            Console.WriteLine("4. Get Contact Details");
+            Console.WriteLine("5. Get All Contacts");
+            Console.WriteLine("6. Get Contacts By Location");
+            Console.WriteLine("7. Exit");
 
-            //Console.WriteLine("Enter your choice");
+            Console.WriteLine("Enter your choice");
 
-            //int choice = int.Parse(Console.ReadLine());
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    //contactsFileRepository.AddContact();
+                    //Contact contact = new Contact { Name = "Sachin", EmailID = "sachin@bcci.org", Location = "Mumbai", Mobile = "234234234" };
+                    //repo.AddContact(contact);
+                    //System.Console.WriteLine("Contact Added");
+
+                    //EF Repository
+
+                    
+
+                    //Add Contact
+                    
+
+
+
+                    break;
+                case 2:
+                    //contactsFileRepository.EditContact();
+                    break;
+                case 3:
+                    //contactsFileRepository.DeleteContact();
+                    break;
+                case 4:
+                    //contactsFileRepository.GetContact();
+
+                    //Get contact 
+                    IContactsRepository repo = new ContactsEFRepository();
+                    
+
+                    break;
+                case 5:
+                    //contactsFileRepository.GetContacts();
+
+                    //Print the contacts from the database
+                    //foreach (Contact con in contacts)
+                    //{
+                    //    Console.WriteLine(con.ContactID);
+                    //    Console.WriteLine(con.Name);
+                    //    Console.WriteLine(con.EmailID);
+                    //    Console.WriteLine(con.Location);
+                    //    Console.WriteLine(con.Mobile);
+                    //}
+                    
+                    break;
+                case 6:
+                    //contactsFileRepository.GetContactsByLocation();
+                    //Print the contacts from the database
+                    //foreach (Contact con in contactsByLocation)
+                    //{
+                    //    Console.WriteLine(con.ContactID);
+                    //    Console.WriteLine(con.Name);
+                    //    Console.WriteLine(con.EmailID);
+                    //    Console.WriteLine(con.Location);
+                    //    Console.WriteLine(con.Mobile);
+                    //}
+                    //Get Contacts by Location
+                    
+
+                    break;
+                case 7:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Choice");
+                    break;
+            }
             
-            //IContactsRepository repo = new ContactsDBRepository();
-            //List<Contact> contacts = repo.GetContacts();
-            //List<Contact> contactsByLocation = repo.GetContactsByLocation("Mumbai");
+            //Transfer();
+        }
 
-            //switch (choice)
-            //{
-            //    case 1:
-            //        //contactsFileRepository.AddContact();
-            //        Contact contact = new Contact { Name = "Sachin", EmailID = "sachin@bcci.org", Location = "Mumbai", Mobile = "234234234" };
-            //        repo.AddContact(contact);
-            //        System.Console.WriteLine("Contact Added");
-            //        break;
-            //    case 2:
-            //        //contactsFileRepository.EditContact();
-            //        break;
-            //    case 3:
-            //        //contactsFileRepository.DeleteContact();
-            //        break;
-            //    case 4:
-            //        //contactsFileRepository.GetContact();
-            //        break;
-            //    case 5:
-            //        //contactsFileRepository.GetContacts();
-
-            //        //Print the contacts from the database
-            //        foreach (Contact con in contacts)
-            //        {
-            //            Console.WriteLine(con.ContactID);
-            //            Console.WriteLine(con.Name);
-            //            Console.WriteLine(con.EmailID);
-            //            Console.WriteLine(con.Location);
-            //            Console.WriteLine(con.Mobile);
-            //        }
-            //        break;
-            //    case 6:
-            //        //contactsFileRepository.GetContactsByLocation();
-            //        //Print the contacts from the database
-            //        foreach (Contact con in contactsByLocation)
-            //        {
-            //            Console.WriteLine(con.ContactID);
-            //            Console.WriteLine(con.Name);
-            //            Console.WriteLine(con.EmailID);
-            //            Console.WriteLine(con.Location);
-            //            Console.WriteLine(con.Mobile);
-            //        }
-            //        break;
-            //    case 7:
-            //        Environment.Exit(0);
-            //        break;
-            //    default:
-            //        Console.WriteLine("Invalid Choice");
-            //        break;
-            //}
+        private static void Transfer()
+        {
             Program p = new Program();
             try
             {

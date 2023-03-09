@@ -13,6 +13,7 @@ namespace ContactManager.DataAccess
         void DeleteContact(int contactID);
         void EditContact(Contact contact);
         Contact GetContact(Contact contact);
+        object GetContact(int v);
         List<Contact> GetContacts();
         List<Contact> GetContactsByLocation(string location);
     }
