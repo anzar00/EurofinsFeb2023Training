@@ -13,5 +13,6 @@ namespace KnowledgeHubPortal.Domain
         List<Category> ListCategories();
         void EditCategory(Category categoryToEdit);
         void DeleteCategory(int categoryId);
+        Category GetCategoryById(int id);
     }
 }

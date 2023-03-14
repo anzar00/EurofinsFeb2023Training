@@ -12,10 +12,22 @@ namespace KnowledgeHubPortal.UI.Controllers
 {
     public class CategoriesController : Controller
     {
+        // Do Not Do This - Inject with IOC instead
+
         // GET: Categories
+
+        private ICategoryRepository repo = null;
+        CategoryManager categoriesManager = null;
+
+        public CategoriesController() 
+        {
+            repo = new CategoryRepository();
+            categoriesManager = new CategoryManager(repo);
+        }
         public ActionResult Index()
         {
-            return View();
+            var categoryList = categoriesManager.ListCategories();
+            return View(categoryList);
         }
         [HttpGet]
         public ActionResult Create() 
@@ -31,15 +43,56 @@ namespace KnowledgeHubPortal.UI.Controllers
                 // Return View With Error Messages
                 return View();
             }
-            // Do Not Do This - Inject with IOC instead
-
-            ICategoryRepository repo = new CategoryRepository();
-            CategoryManager categoriesManager = new CategoryManager(repo);
             
             categoriesManager.AddCategory(category);
-            
-            return View();
 
+            TempData["Message"] = $"Category {category.Name} added successfully...";
+            return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            // Fetch category details based on id and and send to view for editing
+
+            var category = categoriesManager.GetCategoryById(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Category editedCategory)
+        {
+            // Validate
+            if (!ModelState.IsValid)
+            {
+                return View(editedCategory);
+            }
+            
+            // Update in the DB 
+            categoriesManager.EditCategory(editedCategory);
+
+            //return View("Index", categoriesManager.ListCategories());
+
+            // Redirect to Index
+            TempData["Message"] = $"Category edited successfully...";
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var catToDelete = categoriesManager.GetCategoryById(id);
+            return View(catToDelete);
+        }
+
+        public ActionResult ConfirmDelete(int id)
+        {
+            categoriesManager.DeleteCategory(id);
+            // Redirect to Index
+            TempData["Message"] = $"Category {id} deleted successfully...";
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }

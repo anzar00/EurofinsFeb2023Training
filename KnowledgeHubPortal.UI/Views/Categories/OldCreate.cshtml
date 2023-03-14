@@ -1,0 +1,38 @@
+﻿@model KnowledgeHubPortal.Domain.Entities.Category
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<h2>Create</h2>
+
+<div class="container">
+        @*
+    <form action="/Categories/Create" method="post">
+            <div class="mb-3">
+            <label for="categoryName" class="form-label">Category Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="categoryDesc" class="form-label">Category Description</label>
+            <textarea class="form-control" placeholder="Add Description" id="description" name="description" style="height: 100px"></textarea>
+        </div>
+    </form>
+            *@
+
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => m.Name)<br />
+            @Html.TextBoxFor(m => m.Name)<br />
+            @Html.ValidationMessageFor(m => m.Name)<br />
+
+
+            @Html.LabelFor(m => m.Description)<br />
+            @Html.TextAreaFor(m => m.Description)<br />
+            @Html.ValidationMessageFor(m => m.Description)<br />
+
+            <input type="submit" class="btn btn-primary" value="Add" />
+        }
+
+</div>

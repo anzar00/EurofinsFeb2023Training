@@ -1,0 +1,45 @@
+﻿@model List<KnowledgeHubPortal.Domain.Entities.Category>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Manage Categories</h2>
+
+<a href="/Categories/Create" class="btn btn-primary">Create New</a>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success mt-2" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
+
+<table class="table">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a href="/Categories/Edit/@item.CategoryId" class="btn btn-success">Edit</a>
+                <a href="/Categories/Delete/@item.CategoryId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

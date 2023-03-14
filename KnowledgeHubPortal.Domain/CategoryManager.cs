@@ -33,6 +33,11 @@ namespace KnowledgeHubPortal.Domain
             repo.Edit(categoryToEdit);
         }
 
+        public Category GetCategoryById(int id)
+        {
+            return repo.GetCategoryById(id);
+        }
+
         public List<Category> ListCategories()
         {
             return repo.GetAll();

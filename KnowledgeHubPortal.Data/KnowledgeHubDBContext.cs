@@ -12,5 +12,6 @@ namespace KnowledgeHubPortal.Data
     {
         public KnowledgeHubDBContext():base("name=DefaultConnection") { }
         public DbSet<Category> Categories{ get; set; }
+        public DbSet<Article> Articles { get; set; }
     }
 }

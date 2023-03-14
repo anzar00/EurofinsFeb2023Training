@@ -33,5 +33,10 @@ namespace KnowledgeHubPortal.Data
         {
             return db.Categories.ToList();
         }
+
+        public Category GetCategoryById(int id)
+        {
+            return db.Categories.Find(id);
+        }
     }
 }
