@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div class="container">
+    <form action="/Categories/Create" method="post">
+        <div class="mb-3">
+            <label for="categoryName" class="form-label">Category Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="categoryDesc" class="form-label">Category Description</label>
+            <textarea class="form-control" placeholder="Add Description" id="description" name="description" style="height: 100px"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </form>
+</div>
+
+

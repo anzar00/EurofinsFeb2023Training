@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/KnowledgeHubPortal.UI/Scripts
+/KnowledgeHubPortal.WebUI/Content
+/KnowledgeHubPortal.WebUI/Scripts
+/KnowledgeHubPortal.UI/Content
+/.gitignore
