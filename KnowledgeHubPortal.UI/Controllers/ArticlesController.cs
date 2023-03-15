@@ -1,4 +1,5 @@
-﻿using KnowledgeHubPortal.Data;
+﻿using Humanizer;
+using KnowledgeHubPortal.Data;
 using KnowledgeHubPortal.Domain;
 using KnowledgeHubPortal.Domain.Data;
 using KnowledgeHubPortal.Domain.Entities;
@@ -17,21 +18,70 @@ namespace KnowledgeHubPortal.UI.Controllers
 
         // GET: Articles
 
-        private IArticlesRepository Arepo = null;
-        private ICategoryRepository Crepo = null;
+        //private IArticlesRepository Arepo = null;
+        //private ICategoryRepository Crepo = null;
+        //private IArticlesManager articlesManager = null;
+        //private ICategoriesManager categoriesManager = null;
+
+        //public ArticlesController()
+        //{
+        //    Arepo = new ArticlesRepository();
+        //    Crepo = new CategoryRepository();
+        //    articlesManager = new ArticlesManager(Arepo);
+        //    categoriesManager = new CategoryManager(Crepo);
+        //}
+
+        //IOC
         private IArticlesManager articlesManager = null;
         private ICategoriesManager categoriesManager = null;
 
-        public ArticlesController()
+        public ArticlesController(IArticlesManager articlesManager, ICategoriesManager categoriesManager)
         {
-            Arepo = new ArticlesRepository();
-            Crepo = new CategoryRepository();
-            articlesManager = new ArticlesManager(Arepo);
-            categoriesManager = new CategoryManager(Crepo);
+            this.articlesManager = articlesManager;
+            this.categoriesManager = categoriesManager;
         }
+        
+
         public ActionResult Index()
         {
-            return View();
+            var articlesForBrowse = from a in articlesManager.GetArticlesForBrowse()
+                                    select new ArticlesForBrowseViewModel
+                                    {
+                                        Title = a.Title,
+                                        Url = a.Url,
+                                        Description = a.Description,
+                                        CategoryName = a.Category.Name,
+                                        Submiter = a.Submiter,
+                                        CreatedOn = a.DateSubmitted.Humanize(false)
+                                    };
+            return View(articlesForBrowse);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string searchTerm = null)
+        {
+            var articlesForBrowse = from a in articlesManager.GetArticlesForBrowse()
+                                    select new ArticlesForBrowseViewModel
+                                    {
+                                        Title = a.Title,
+                                        Url = a.Url,
+                                        Description = a.Description,
+                                        CategoryName = a.Category.Name,
+                                        Submiter = a.Submiter,
+                                        CreatedOn = a.DateSubmitted.Humanize(false)
+                                    };
+
+            if(searchTerm != null)
+            {
+                var filteredArticles = articlesForBrowse.Where(a => a.Title.Contains(searchTerm) ||
+                                                               a.Description.Contains(searchTerm) ||
+                                                               a.CategoryName.Contains(searchTerm) ||
+                                                               a.Url.Contains(searchTerm) ||
+                                                               a.Submiter.Contains(searchTerm));
+                return View(filteredArticles);
+            }
+            return View(articlesForBrowse);
+
         }
 
         [HttpGet]
@@ -76,6 +126,37 @@ namespace KnowledgeHubPortal.UI.Controllers
             articlesManager.SubmitArticle(article);
             TempData["Message"] = $"Article - {article.Title} added successfully for review...";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ReviewArticles()
+        {
+            var articlesForReview = from a in articlesManager.GetArticlesForReview()
+                                    select new ReviewArticlesViewModel
+                                    {
+                                        Id = a.Id,
+                                        Title = a.Title,
+                                        Url = a.Url,
+                                        Category = a.Category.Name,
+                                        Submiter = a.Submiter,
+                                        WhenSubmitted = a.DateSubmitted.Humanize(false)
+                                    };
+            return View(articlesForReview);
+        }
+
+        public ActionResult Accept(List<int> articleIds)
+        {
+            articlesManager.ApproveArticle(articleIds);
+            TempData["Message"] = $"{articleIds.Count()} articles approved and added successfuly.";
+            //Send mail to the user 
+            return RedirectToAction("ReviewArticles");
+        }
+
+        public ActionResult Reject(List<int> articleIds)
+        {
+            articlesManager.RejectArticle(articleIds);
+            TempData["Message"] = $"{articleIds.Count()} articles rejected successfuly.";
+            //Send mail to the user
+            return RedirectToAction("ReviewArticles");
         }
     }
 }

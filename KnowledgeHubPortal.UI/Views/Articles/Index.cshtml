@@ -1,0 +1,62 @@
+﻿@model IEnumerable<KnowledgeHubPortal.UI.Models.ArticlesForBrowseViewModel>
+
+@{
+    ViewBag.Title = "Browse Articles";
+}
+
+<h2>Browse Articles</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success mt-2" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
+@* Search Box from partial page*@
+
+@Html.Partial("_SearchArticlesPartial")
+
+<p>
+    @Html.ActionLink("Submit Another", "SubmitArticle", "Articles", new {area =""}, new {@class = "btn btn-success"})
+</p>
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Submiter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="@item.Url" target="_blank">@item.Title</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submiter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+    </tr>
+}
+
+</table>

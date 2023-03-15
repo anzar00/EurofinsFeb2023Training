@@ -1,0 +1,74 @@
+﻿@model IEnumerable<KnowledgeHubPortal.UI.Models.ReviewArticlesViewModel>
+
+@{
+    ViewBag.Title = "ReviewArticles";
+}
+
+<h2>Review Articles</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success mt-2" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
+@* If no articles for review, display that message *@
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-info mt-2" role="alert">
+        No articles for review
+    </div>
+}
+else
+{
+<form method="post">
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>
+                Select
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Submiter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WhenSubmitted)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <input type="checkbox" name="articleIds" value="@item.Id" />
+                </td>
+                <td>
+                    <a href="@item.Url" target="_blank">@item.Title</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Submiter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WhenSubmitted)
+                </td>
+            </tr>
+        }
+    </table>
+    @* Add two buttons for accepting and rejecting the articles *@
+    @* If no article checkbox is selected, disable the buttons and add a message *@
+
+    <input type="submit" formaction="/Articles/Accept" name="accept" value="Accept" class="btn btn-success" />
+    <input type="submit" formaction="/Articles/Reject" name="reject" value="Reject" class="btn btn-danger" />
+</form>
+}
+

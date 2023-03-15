@@ -20,7 +20,7 @@ namespace KnowledgeHubPortal.Domain.Entities
         [MaxLength(500)]
         public string Description { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public string Submiter { get; set; }
         public bool IsApproved { get; set; }
         public DateTime DateSubmitted { get; set; }

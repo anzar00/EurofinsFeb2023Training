@@ -16,13 +16,21 @@ namespace KnowledgeHubPortal.UI.Controllers
 
         // GET: Categories
 
-        private ICategoryRepository repo = null;
-        CategoryManager categoriesManager = null;
+        //private ICategoryRepository repo = null;
+        //CategoryManager categoriesManager = null;
 
-        public CategoriesController() 
+        //public CategoriesController() 
+        //{
+        //    repo = new CategoryRepository();
+        //    categoriesManager = new CategoryManager(repo);
+        //}
+
+        //IOC
+        private ICategoriesManager categoriesManager = null;
+
+        public CategoriesController(ICategoriesManager categoriesManager)
         {
-            repo = new CategoryRepository();
-            categoriesManager = new CategoryManager(repo);
+            this.categoriesManager = categoriesManager;
         }
         public ActionResult Index()
         {
