@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace KnowledgeHubPortal.UI.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class CategoriesController : Controller
     {
         // Do Not Do This - Inject with IOC instead

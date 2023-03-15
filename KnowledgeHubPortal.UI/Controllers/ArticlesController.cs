@@ -85,6 +85,7 @@ namespace KnowledgeHubPortal.UI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult SubmitArticle()
         {
             //var categories = categoriesManager.ListCategories();
@@ -127,7 +128,7 @@ namespace KnowledgeHubPortal.UI.Controllers
             TempData["Message"] = $"Article - {article.Title} added successfully for review...";
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult ReviewArticles()
         {
             var articlesForReview = from a in articlesManager.GetArticlesForReview()
@@ -142,7 +143,7 @@ namespace KnowledgeHubPortal.UI.Controllers
                                     };
             return View(articlesForReview);
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Accept(List<int> articleIds)
         {
             articlesManager.ApproveArticle(articleIds);
@@ -150,7 +151,7 @@ namespace KnowledgeHubPortal.UI.Controllers
             //Send mail to the user 
             return RedirectToAction("ReviewArticles");
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Reject(List<int> articleIds)
         {
             articlesManager.RejectArticle(articleIds);

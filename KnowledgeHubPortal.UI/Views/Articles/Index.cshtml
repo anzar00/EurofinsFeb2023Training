@@ -17,9 +17,12 @@
 
 @Html.Partial("_SearchArticlesPartial")
 
-<p>
-    @Html.ActionLink("Submit Another", "SubmitArticle", "Articles", new {area =""}, new {@class = "btn btn-success"})
-</p>
+@if(User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Submit Another", "SubmitArticle", "Articles", new {area =""}, new {@class = "btn btn-success"})
+    </p>
+}
 <table class="table table-striped table-bordered">
     <tr>
         <th>

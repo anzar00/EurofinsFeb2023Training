@@ -1,9 +1,11 @@
 using KnowledgeHubPortal.Data;
 using KnowledgeHubPortal.Domain;
 using KnowledgeHubPortal.Domain.Data;
+using KnowledgeHubPortal.UI.Controllers;
 using System;
 
 using Unity;
+using Unity.Injection;
 
 namespace KnowledgeHubPortal.UI
 {
@@ -49,6 +51,7 @@ namespace KnowledgeHubPortal.UI
             container.RegisterType<IArticlesManager, ArticlesManager>();
             container.RegisterType<IArticlesRepository, ArticlesRepository>();
             container.RegisterType<ICategoryRepository, CategoryRepository>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }
