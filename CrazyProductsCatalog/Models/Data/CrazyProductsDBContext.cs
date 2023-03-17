@@ -9,7 +9,7 @@ namespace CrazyProductsCatalog.Models.Data
 {
     public class CrazyProductsDBContext : DbContext
     {
-        public CrazyProductsDBContext() : base("name=DefautlConnection")
+        public CrazyProductsDBContext() : base("name=DefaultConnection")
         {
 
         }
